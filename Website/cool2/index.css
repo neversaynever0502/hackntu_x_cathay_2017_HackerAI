@@ -1,0 +1,150 @@
+// ------------- RESET ------------- //
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+// ------------- CUSTOM DROPDOWN - FUNCTIONAL / STRUCTURAL MIXIN ------------- //
+@mixin custom-dropdown($background) {
+    position: absolute;
+    cursor: pointer;
+    &.active {
+        input[type=radio] + label {
+            visibility: visible;
+            opacity: 1; 
+            height: auto;
+        }
+    }
+    &:not(.active) {
+        input[type=radio]:not(:checked) + label {
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    input[type=radio] {
+        display: none;
+        pointer-events: none;
+        &:checked + label {
+            z-index: 10;
+        }
+    }
+    label {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        background-color: $background;
+        transition: all .25s ease-in-out;
+        backface-visibility: hidden;
+        will-change: opacity;
+    }
+}
+
+// ------------- CUSTOM DROPDOWN ------------- //
+[id=customBackground] {
+    background-image: url("http://s7.postimg.org/6q2osq2t7/filter_1.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    transition: background-image .55s;
+    &:after {
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%; 
+        position: fixed;
+        background-color: #000;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .25s ease-in;
+        will-change: opacity;
+    }
+    &.cityscape {
+        background-image: url("http://s7.postimg.org/6q2osq2t7/filter_1.jpg");
+    }
+    &.bus {
+        background-image: url("http://s29.postimg.org/a351qju6f/filter_2.jpg");
+    }
+    &.cactus {
+        background-image: url("http://s23.postimg.org/og1paqupn/filter_3.jpg");
+    }
+}
+
+.custom-dropdown {
+    @include custom-dropdown(#fff);
+    min-width: 400px;
+    margin-top: -41px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    &:after {
+        content: "\f078";
+        display: inline-block;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        ext-align: center;
+        padding: 16px 19px 15px 19px;
+        border-left: 1px dotted #ccc;
+        position: absolute;
+        top: 14px;
+        height: 42px;
+        right: 0;
+        font-size: .9em;
+        z-index: 10;
+        color: #B4B4B4;
+        transition: none;
+        pointer-events: none;
+    }
+    label {
+        font-family: 'Montserrat', sans-serif;
+        color: #7a7a7a;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        font-size: 1.4em;
+        padding: 22px 26px;
+        margin-bottom: 10px;
+    } 
+    &.active {
+        &:after {
+            visibility: hidden;
+        }
+        input[type=radio]:checked + label {
+            color: #000;
+            &:hover {
+                color: #fff;
+            }
+        }
+        label {
+            &:hover {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+        + [id=customBackground] {
+            filter: blur(3px);
+            &:after {
+                visibility: visible;
+                opacity: .5;
+            }
+        }
+    }
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Script Tutorials" />
+
+        <script type="text/javascript" src="success.json"></script>
+        <script src="dist/sweetalert.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="dist/sweetalert.css"></link>
+        <title>Whirling dropdown menu | Script Tutorials</title>
+        <script src="dist/sweetalert.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+        <!-- add styles -->
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+    <style>
+     /*   body{background-image: url("img1.jpeg");
+    background-size:cover}*/
+</style>
+    <br><br><br><br><br><br>
+    
+        <div class="container"  id="main" role="main" style="text-align: center;">
+
+            <ul class="menu">
+                <li><a href="#">HackerAI</a></li>
+
+                <li><a href="#s1">性別</a>
+                    <ul class="submenu">
+                        <li><a onclick="fun1(1)">林北是男的</a></li>
+                        <li><a onclick="fun1(2)">人家是女生</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="#s2">通訊地址</a>
+                    <ul class="submenu">
+                        <li><a onclick="fun2(1)">A</a></li>
+                        <li><a onclick="fun2(2)">B</a></li>
+                        <li><a onclick="fun2(3)">C</a></li>
+                        <li><a onclick="fun2(4)">D</a></li>
+                        <li><a onclick="fun2(5)">E</a></li>
+                        <li><a onclick="fun2(6)">F</a></li>
+                        <li><a onclick="fun2(7)">G</a></li>
+                        <li><a onclick="fun2(8)">H</a></li>
+                        <li><a onclick="fun2(9)">I</a></li>
+                        <li><a onclick="fun2(10)">J</a></li>
+                        <li><a onclick="fun2(11)">K</a></li>
+                        <li><a onclick="fun2(12)">L</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">AUM</a>
+                    <ul class="submenu">
+                        <li><a onclick="fun3(100,1000)">100~1000</a></li>
+                        <li><a onclick="fun3(1000,5000)">1000~5000</a></li>
+                        <li><a onclick="fun3(5000,20000)">5000~20000</a></li>
+                        <li><a onclick="fun3(20000,50000)">20000~50000</a></li>
+                        <li><a onclick="fun3(50000,150000)">50000~150000</a></li>
+                        <li><a onclick="fun3(150000,300000)">150000~300000</a></li>
+                        <li><a onclick="fun3(300000,1000000)">>300000</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Net Profit</a>
+                    <ul class="submenu">
+                        <li><a onclick="fun4(100,1000)">100~1000</a></li>
+                        <li><a onclick="fun4(1000,5000)">1000~5000</a></li>
+                        <li><a onclick="fun4(5000,20000)">5000~20000</a></li>
+                        <li><a onclick="fun4(20000,50000)">20000~50000</a></li>
+                        <li><a onclick="fun4(50000,150000)">50000~150000</a></li>
+                        <li><a onclick="fun4(150000,300000)">150000~300000</a></li>
+                        <li><a onclick="fun4(300000,1000000)">>300000</a></li>
+                    </ul>
+                </li>
+                <br><br><br><br>
+                <li><a href="#">AUM變化量(月)</a>
+                    <ul class="submenu">
+                        <li><a onclick="fun5(100,1000)">100~1000</a></li>
+                        <li><a onclick="fun5(1000,5000)">1000~5000</a></li>
+                        <li><a onclick="fun5(5000,20000)">5000~20000</a></li>
+                        <li><a onclick="fun5(20000,50000)">20000~50000</a></li>
+                        <li><a onclick="fun5(50000,150000)">50000~150000</a></li>
+                        <li><a onclick="fun5(150000,300000)">150000~300000</a></li>
+                        <li><a onclick="fun5(300000,1000000)">>300000</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Net Profit變化量(月)</a>
+                    <ul class="submenu">
+                        <li><a onclick="fun6(100,1000)">100~1000</a></li>
+                        <li><a onclick="fun6(1000,5000)">1000~5000</a></li>
+                        <li><a onclick="fun6(5000,20000)">5000~20000</a></li>
+                        <li><a onclick="fun6(20000,50000)">20000~50000</a></li>
+                        <li><a onclick="fun6(50000,150000)">50000~150000</a></li>
+                        <li><a onclick="fun6(150000,300000)">150000~300000</a></li>
+                        <li><a onclick="fun6(300000,1000000)">>300000</a></li>
+                    </ul>
+                </li>
+                <!-- <li><a href="#">original_currency_code</a></li> -->
+                <br><br><br><br>
+                <li><a href="#">信用卡</a>
+                    <ul class="submenu">
+                        <li><a onclick="fun7(1)">有的</a></li>
+                        <li><a onclick="fun7(2)">沒有欸</a></li>
+                    </ul>
+                </li> 
+                <li><a href="#">貸款</a>
+                    <ul class="submenu">
+                        <li><a onclick="fun8(1)">有的</a></li>
+                        <li><a onclick="fun8(2)">沒有欸</a></li>
+                    </ul>
+                </li> 
+                <li><a href="#">存款</a>
+                    <ul class="submenu">
+                        <li><a onclick="fun9(1)">有的</a></li>
+                        <li><a onclick="fun9(2)">沒有欸</a></li>
+                    </ul>
+                </li> 
+                <li><a href="#">理財商品往來</a>
+                    <ul class="submenu">
+                        <li><a onclick="fun10(1)">有的</a></li>
+                        <li><a onclick="fun10(2)">沒有欸</a></li>
+                    </ul>
+                </li> 
+                <br><br><br><br><br><br><br>
+                <li style=""><a onclick="result()">快告訴我結果</a></li>
+            </ul>
+        </div>
+        <script>
+        var gender,contact_loc,aum1,aum2,net_profit1,net_profit2,delta_aum1,delta_aum2,delta_net_p1,delta_net_p2,credit_card_flag,loan_flag,deposit_flag,wealth_flag;
+        function fun1(k){
+            gender=k
+            console.log(gender)
+        }
+        function fun2(k){
+            contact_loc=k
+            console.log(contact_loc)
+        }
+        function fun3(k1,k2){
+            aum1=k1
+            aum2=k2
+            console.log(aum1,aum2)
+        }
+        function fun4(k1,k2){
+            net_profit1=k1
+            net_profit2=k2
+            console.log(net_profit1,net_profit2)
+        }
+        function fun5(k1,k2){
+            delta_aum1=k1
+            delta_aum2=k2
+            console.log(aum1,aum2)
+        }
+        function fun6(k1,k2){
+            delta_net_p1=k1
+            delta_net_p2=k2
+            console.log(delta_net_p1,delta_net_p2)
+        }
+        function fun7(k){
+            credit_card_flag=k
+            console.log(credit_card_flag)
+        }
+        function fun8(k){
+            loan_flag=k
+            console.log(loan_flag)
+        }
+        function fun9(k){
+            deposit_flag=k
+            console.log(deposit_flag)
+        }
+        function fun10(k){
+            wealth_flag=k
+            console.log(wealth_flag)
+        }
+
+        function end(){
+            alert(a1+a2)
+        }
+
+
+
+        function result(){
+            var mydata = data;
+            // var gender=1
+            // var contact_loc=6
+            // var aum=1610557.23648
+            // var net_profit=1176657.5282100001
+            // var delta_aum=11792.25717
+            // var delta_net_p=-1081.57944
+            // var original_currency_code=3
+            // var credit_card_flag=1
+            // var loan_flag=2
+            // var deposit_flag=1
+            // var wealth_flag=2
+            // var n=0
+            
+            // var card_type=8
+            var label=[0,0,0,0,0,0,0,0,0,0,0,0]
+
+            var count=data.length
+            for (k=0;k<count;k++){
+                if (mydata[k].gender== gender){
+                    if (mydata[k].contact_loc==contact_loc){
+                        if (aum1<mydata[k].aum<aum2){
+                            if (net_profit1<mydata[k].net_profit<net_profit2){
+                                if (delta_aum1<mydata[k].delta_aum<delta_aum2){
+                                    if (delta_net_p1<mydata[k].delta_net_p<delta_net_p2){
+                                        // if (mydata[k].original_currency_code==original_currency_code){
+                                            if (mydata[k].credit_card_flag==credit_card_flag){
+                                                if (mydata[k].loan_flag==loan_flag){
+                                                    if (mydata[k].deposit_flag==deposit_flag){
+                                                        if (mydata[k].wealth_flag==wealth_flag){
+                                                            label[mydata[k].card_type-1]=label[mydata[k].card_type-1]+1
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        // }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            console.log(label)
+
+            var max = Math.max(...label);
+            // alert(max)
+            for(s=0;s<12;s++){
+                if(label[s]==max){
+                    // alert(s+1)
+                    var rere=['68c0679dee09a8a84415575141e7bff0', '25e703ffc737f7de50a26ae1ad9c2d68', '674f57e4999387afb41e10d6bb69d31c', 'd45f326a411dfc18c367cb89b4a679b1', 'ebd46e2c742aed42e145d0c1b91ccd2f', 'b6ef2627fe70aebb6e8b672a93bde0fb', 'd3c4513800d154c35c08c66004df9fda', 'e64d18c5974c98e5af2f0b7d9f67a79e', 'baa137dd50749d28e714e04e324c6160', '7a4925e711b762c5cda7e35cc37d6408', 'null', '3e6282ace882e04800d4b5c458d1f269']
+                    swal({
+                      title:"國泰X台大駭客松推薦信用卡",
+                      text: "推薦「"+rere[s]+"」信用卡給重要的您" ,
+                      // text: a1+a2,
+                      imageUrl: "thumbs-up.jpg"
+                    });
+                }
+            }
+
+        // swal("推薦「"+(s+1).toString()+"」信用卡給重要的您")
+        }
+
+        </script>
+
+
+    </body>
+</html>
