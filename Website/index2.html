@@ -1,0 +1,75 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="success.json"></script>
+<script src="dist/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="dist/sweetalert.css"></link>
+
+</head>
+<body>
+
+<script>
+var mydata = data;
+var gender=1
+var contact_loc=6
+var aum=1610557.23648
+var net_profit=1176657.5282100001
+var delta_aum=11792.25717
+var delta_net_p=-1081.57944
+var original_currency_code=3
+var credit_card_flag=1
+var loan_flag=2
+var deposit_flag=1
+var wealth_flag=2
+var n=0
+// var card_type=8
+var label=[0,0,0,0,0,0,0,0,0,0,0,0]
+
+var count=data.length
+for (k=0;k<count;k++){
+	if (mydata[k].gender== gender){
+		if (mydata[k].contact_loc==contact_loc){
+			if (mydata[k].aum==aum){
+				if (mydata[k].net_profit==net_profit){
+					if (mydata[k].delta_aum==delta_aum){
+						if (mydata[k].delta_net_p==delta_net_p){
+							if (mydata[k].original_currency_code==original_currency_code){
+								if (mydata[k].credit_card_flag==credit_card_flag){
+									if (mydata[k].loan_flag==loan_flag){
+										if (mydata[k].deposit_flag==deposit_flag){
+											if (mydata[k].wealth_flag==wealth_flag){
+												label[mydata[k].card_type-1]=label[mydata[k].card_type-1]+1
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// alert(label)
+
+var max = Math.max(...label);
+// alert(max)
+for(s=0;s<12;s++){
+	if(label[s]==max){
+		// alert(s+1)
+		swal({
+		  title:"推薦「"+(s+1).toString()+"」信用卡給重要的您",
+		  text: "國泰X台大駭客松推薦信用卡，如有需要請洽客服" ,
+		  imageUrl: "thumbs-up.jpg"
+		});
+	}
+}
+
+// swal("推薦「"+(s+1).toString()+"」信用卡給重要的您")
+
+</script>
+</body>
+</html>
